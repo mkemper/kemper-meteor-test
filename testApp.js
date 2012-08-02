@@ -1,4 +1,3 @@
-//
 Articles = new Meteor.Collection("articles");
 
 if (Meteor.is_client) {
