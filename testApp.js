@@ -21,7 +21,7 @@ if (Meteor.is_client) {
       var authorname = document.getElementById('select_author');
       var messagecontent = document.getElementById('message');
       
-      if (evt.type === "keyup" && evt.which === 13){     
+      if (evt.type === "keyup" && evt.which === 13) {     
       Articles.insert({author: authorname.value, text: messagecontent.value});
       document.getElementById('message').value = "";
     }

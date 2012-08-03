@@ -23,12 +23,12 @@
 
 <template name="testApp">
 
-<p>{{author}}, Alter:{{age}} sagt:"{{text}}" <span .del>[x]</span></p>
+<p>{{author}}, Alter:{{age}} sagt:"{{text}}" <span>[x]</span></p>
 
 </template>
 
 <template name="entry">
- Author: <select id="select_author">{{#each authors}}<option id="author" value="{{name}}">{{name}}</option>{{/each}}</select> 
- Message: <input type="text" id="message" placeholder="Your Message!" size="50">
+Author: <select id="select_author">{{#each authors}}<option id="author" value="{{name}}">{{name}}</option>{{/each}}</select> 
+Message: <input type="text" id="message" placeholder="Your Message!" size="50">
 </template>
 
