@@ -1,27 +1,30 @@
 Articles = new Meteor.Collection("articles");
+Authors = new Meteor.Collection("authors");
 
 if (Meteor.is_client) {
-  Template.looserboard.content = function () {
+  Template.looserboard.article= function () {
     return Articles.find({});
   };
   Template.testApp.events = {
-    'click input.del': function () {
+    'click span': function () {
       Articles.remove({_id: this._id});
     }
   };	
 
 
   Template.entry.authors = function() {
-    return Articles.find({});
+    return Authors.find({});
   }
 
   Template.entry.events = {
-    'click input.snd': function () {
+    'keyup input': function (evt) {
       var authorname = document.getElementById('select_author');
       var messagecontent = document.getElementById('message');
-      console.log(authorname.value);
-      console.log(messagecontent.value);
+      
+      if (evt.type === "keyup" && evt.which === 13){     
       Articles.insert({author: authorname.value, text: messagecontent.value});
+      document.getElementById('message').value = "";
+    }
     }
   };
 

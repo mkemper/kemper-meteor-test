@@ -15,7 +15,7 @@
 </body>
 
 <template name="looserboard">
-{{#each content}}
+{{#each article}}
 {{> testApp}}
 {{/each}}
 </template>
@@ -23,13 +23,12 @@
 
 <template name="testApp">
 
-<p>{{author}}, Alter:{{age}} sagt:"{{text}}" <input type="submit" value="delete" class="del"></p>
+<p>{{author}}, Alter:{{age}} sagt:"{{text}}" <span .del>[x]</span></p>
 
 </template>
 
 <template name="entry">
- Author: <select id="select_author">{{#each authors}}<option id="author" value="{{author}}">{{author}}</option>{{/each}}</select> 
+ Author: <select id="select_author">{{#each authors}}<option id="author" value="{{name}}">{{name}}</option>{{/each}}</select> 
  Message: <input type="text" id="message" placeholder="Your Message!" size="50">
- <input type="submit" value="Send!" class="snd">
 </template>
 
